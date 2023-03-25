@@ -5,7 +5,10 @@ export const useCurrency = () => {
   const getUSDtoPHP = async () => {
     try {
       // START: Access update user API
-      const endpoint = `https://query2.finance.yahoo.com/v8/finance/chart/PHP=X?formatted=true&crumb=kUBNJm%2FgQ88&lang=en-US&region=US&includeAdjustedClose=true&interval=1d&period1=1609459200&period2=1679702400&events=capitalGain%7Cdiv%7Csplit&useYfid=true&corsDomain=finance.yahoo.com`;
+      //   const endpoint = `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=PHP&to_currency=USD&apikey=IMKAEWMTETASY661`;
+
+      const endpoint =
+        "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=PHP&to_symbol=USD&apikey=IMKAEWMTETASY661&outputsize=full";
 
       //  const options = {
       //    headers: {

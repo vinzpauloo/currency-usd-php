@@ -2,13 +2,13 @@ import React from "react";
 import axios, { AxiosError } from "axios";
 
 export const useCurrency = () => {
+  const exchangeKey = "IMKAEWMTETASY661";
+
   const getUSDtoPHP = async () => {
     try {
       // START: Access update user API
-      //   const endpoint = `https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=PHP&to_currency=USD&apikey=IMKAEWMTETASY661`;
 
-      const endpoint =
-        "https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=PHP&to_symbol=USD&apikey=IMKAEWMTETASY661&outputsize=full";
+      const endpoint = `https://www.alphavantage.co/query?function=FX_DAILY&from_symbol=USD&to_symbol=PHP&apikey=${exchangeKey}&outputsize=full`;
 
       //  const options = {
       //    headers: {
@@ -25,7 +25,6 @@ export const useCurrency = () => {
 
       if (response.status === 200) {
         const { data } = response;
-        console.log(`RESPONSE!!!`, data);
 
         return data;
       }
